@@ -1,0 +1,21 @@
+div.Cadastro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 21px;
+    text-align: center;
+  }
+  div.buttons {
+    display: flex;
+    margin-top: 13px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    button {
+      width: max-content;
+      margin: 8px;
+    }
+  }
+}
