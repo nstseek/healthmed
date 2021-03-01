@@ -22,8 +22,7 @@ Um [processo de CI/CD simples](https://github.com/nstseek/healthmed/actions/work
 
 ## Testes
 
-A cobertura de testes unitários está bem precária por falta de tempo para desenvolvê-la. Como é um projeto de teste apenas, não vejo necessidade de cobrir o projeto inteiro com testes unitários pois demandaria tempo que não tenho disponível.
-
+A cobertura de testes unitários está razoável, me faltou tempo para desenvolver testes melhores. Como é um projeto que servirá apenas como teste técnico, não vejo necessidade de cobrir o projeto inteiro com testes unitários de qualidade pois demandaria tempo que não tenho disponível e o benefício não valeria a pena.
 O resultado dos testes de cada commit é publicado utilizando o GitHub Actions logo após rodarem, como você pode ver [aqui](https://github.com/nstseek/healthmed/runs/2003339433?check_suite_focus=true).
 
 ## Flow de trabalho
