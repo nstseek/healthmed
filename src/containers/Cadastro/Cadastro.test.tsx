@@ -5,7 +5,7 @@ import Cadastro from './Cadastro';
 import PacienteContext from 'contexts/pacientes/paciente-context';
 import MockPacientes from 'mocks/models/pacientes';
 import moment from 'moment';
-import { ReactUIContext, useRootContext } from '@nstseek/react-ui/context';
+import { ReactUIContext } from '@nstseek/react-ui/context';
 
 const originalForm = {
   state: {
