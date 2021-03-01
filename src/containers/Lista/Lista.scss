@@ -1,0 +1,11 @@
+div.Lista {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  form {
+    margin-bottom: 21px;
+  }
+  div.lista-content {
+    width: 100%;
+  }
+}

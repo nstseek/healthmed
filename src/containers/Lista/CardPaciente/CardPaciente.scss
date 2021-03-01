@@ -1,0 +1,27 @@
+div.CardPaciente {
+  display: flex;
+  padding: 13px Min(21px, 3vw);
+  border-radius: 13px;
+  background-color: #444;
+  border: 1px solid white;
+  div.data {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: white;
+    p {
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+  }
+  div.buttons {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin: 8px;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+}
