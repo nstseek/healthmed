@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@nstseek/react-forms": "^3.0.2",
+    "@nstseek/react-forms": "^3.1.0",
     "@nstseek/react-ui": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",

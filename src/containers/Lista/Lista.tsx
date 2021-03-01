@@ -16,7 +16,8 @@ const formSearchConfig: FormBuilder<{ query: string }> = {
       label: '',
       hideLabel: true,
       type: 'text',
-      placeholder: 'Pesquise o paciente por nome aqui'
+      placeholder: 'Pesquise o paciente por nome aqui',
+      includeStyles: false
     }
   }
 };
