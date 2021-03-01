@@ -183,16 +183,17 @@ const Cadastro: React.FC = () => {
       <h3>Dados</h3>
       <Form form={formPaciente} />
       <div className='buttons'>
-        <button onClick={saveForm}>
+        <button id='save' onClick={saveForm}>
           <i className='fas fa-save' />
           Salvar
         </button>
-        <button onClick={formPaciente.reset}>
+        <button id='clear' onClick={formPaciente.reset}>
           <i className='fas fa-eraser' />
           Limpar
         </button>
         {getPacienteById(Number(id)) ? (
           <button
+            id='cancel'
             onClick={() => {
               formPaciente.reset();
               history.push('/');
@@ -202,10 +203,12 @@ const Cadastro: React.FC = () => {
           </button>
         ) : null}
 
-        <button onClick={clearStorage}>
-          <i className='fas fa-eraser' />
-          Apagar todos os dados
-        </button>
+        {pacientes.length ? (
+          <button id='erase' onClick={clearStorage}>
+            <i className='fas fa-eraser' />
+            Apagar todos os dados
+          </button>
+        ) : null}
       </div>
     </div>
   );
