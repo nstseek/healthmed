@@ -1,48 +1,85 @@
+# Healthmed - Controle de pacientes
+
 [![CI/CD](https://github.com/nstseek/healthmed/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/nstseek/healthmed/actions/workflows/firebase-hosting-merge.yml)
 
-# Getting Started with Create React App
+Essa aplicação foi desenvolvida para completar o teste técnico proposto para a vaga de desenvolvedor front-end. Você pode visualizar a aplicação funcionando em [https://healthmed-client.web.app/](https://healthmed-client.web.app/). Você também pode visualizar o estado das builds e deploys de cada commit visualizando o histórico de commits [aqui](https://github.com/nstseek/healthmed/commits/master) ou vendo o estado dos workflows do repositório [aqui](hhttps://github.com/nstseek/healthmed/actions).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tecnologias
 
-## Available Scripts
+Esse projeto foi desenvolvido utilizando algumas das mais recentes tecnologias como React (com Hooks e Context API), TypeScript, Jest, Enzyme, SCSS e algumas outras bibliotecas de minha autoria, como [@nstseek/react-forms](https://www.npmjs.com/package/@nstseek/react-forms) e [@nstseek/react-ui](https://www.npmjs.com/package/@nstseek/react-ui).
 
-In the project directory, you can run:
+## Documentação
 
-### `npm start`
+O projeto possui uma cobertura de documentação razoável utilizando [JSDOC](https://jsdoc.app/) em cada componente e interface relevante da aplicação. Caso a sua IDE suporte, basta você passar o mouse sobre um componente e verá uma descrição a respeito do mesmo, explicando qual o propósito daquele componente/variável/interface. Segue um exemplo no link abaixo para demonstrar a funcionalidade funcionando no Visual Studio Code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![JSDOC example](src/assets/Screenshot_1.png?raw=true 'JSDOC example')
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Caso a sua IDE não suporte a notação [JSDOC](https://jsdoc.app/), basta ler o comentário sobre a declaração do componente/váriavel/interface. A documentação foi escrita em inglês por costume próprio e porque a aplicação está disponível no meu perfil do GitHub, o qual é voltado mais pra área internacional(inglês) do que nacional(português).
 
-### `npm test`
+## Continuous Integration and Continuous Deployment (CI/CD)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Um [processo de CI/CD simples](https://github.com/nstseek/healthmed/actions/workflows/firebase-hosting-merge.yml) foi implementado nesse projeto utilizando as Actions do GitHub. Toda vez que algum commit é adicionado a master, o projeto passa por sua bateria de testes, é buildado e deployado no GitHub Pages, podendo ser visualizado no [endereço mencionado acima](https://github.com/nstseek/healthmed/actions).
 
-### `npm run build`
+## Testes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A cobertura de testes unitários está bem precária por falta de tempo para desenvolvê-la. Como é um projeto de teste apenas, não vejo necessidade de cobrir o projeto inteiro com testes unitários pois demandaria tempo que não tenho disponível.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O resultado dos testes de cada commit é publicado utilizando o GitHub Actions logo após rodarem, como você pode ver [aqui](https://github.com/nstseek/healthmed/runs/2003339433?check_suite_focus=true).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Flow de trabalho
 
-### `npm run eject`
+O projeto possui uma série de filtros para garantir a qualidade do código criado, como [linters](https://eslint.org/), [formatters](https://prettier.io/) e [testes unitários](https://jestjs.io/en/) com [framework específico](https://enzymejs.github.io/enzyme/) que rodam toda vez que o desenvolvedor tenta realizar o push para o repositório através dos git hooks. Esse projeto utiliza o pacote [husky](https://www.npmjs.com/package/husky) que torna muito simples a configuração de git hooks em qualquer repositório Git. Toda vez que o desenvolvedor tenta realizar o push, o script [npm run check](https://github.com/nstseek/healthmed/blob/8962279f2a57b3b93217a91c272f035834f387c0/package.json#L50) [roda antes que o push seja efetuado](https://github.com/nstseek/healthmed/blob/8962279f2a57b3b93217a91c272f035834f387c0/package.json#L74), garantindo que o código que está sendo enviado passa em todos os testes e builda corretamente.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Scripts disponíveis
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Inicia o projeto na sua máquina local.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### npm run build
 
-## Learn More
+Cria um build do projeto para ser servido.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### npm run eject
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ejeta toda a articulação do create-react-app que não é totalmente visível/manipulável para o desenvolvedor final.
+
+### npm test
+
+Executa todos os testes unitários do projeto.
+
+### npm run test:watch
+
+Executa todos os testes unitários do projeto em modo de observação.
+
+### npm run test:report
+
+Executa todos os testes unitários do projeto e gera um report para ser publicado com o GitHub Actions.
+
+### npm run prettier
+
+Executa o [formatter](https://prettier.io/) instalado no projeto para verificar os arquivos existentes.
+
+### npm run prettier:fix
+
+Executa o [formatter](https://prettier.io/) instalado no projeto para corrigir os erros nos arquivos existentes.
+
+### npm run lint
+
+Executa o [linter](https://eslint.org/) instalado no projeto para verificar os arquivos existentes.
+
+### npm run lint:fix
+
+Executa o [linter](https://eslint.org/) instalado no projeto para corrigir os erros nos arquivos existentes.
+
+### npm run check
+
+Executa uma verificação completa no projeto, incluindo o linter, formatter, os testes unitários e o build.
+
+### npm run check:ci
+
+Executa uma verificação completa no projeto destinada para um ambiente CI, incluindo o linter, formatter, os testes unitários (gerando um report para publicação) e o build.
+
+### npm run check:fix
+
+Executa uma verificação completa no projeto, incluindo o linter, formatter, os testes unitários e o build, corrigindo os erros passíveis de correção automática com o linter e o formatter.

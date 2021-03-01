@@ -75,7 +75,7 @@
     }
   },
   "devDependencies": {
-    "husky": "^5.1.2"
+    "husky": "^4.3.8"
   },
   "prettier": {
     "trailingComma": "none",
