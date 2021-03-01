@@ -65,18 +65,18 @@ const CardPaciente: React.FC<Props> = ({ paciente }) => {
         </p>
       </div>
       <div className='buttons'>
-        <button onClick={toggleStatus}>
+        <button id='toggle' onClick={toggleStatus}>
           <i
             className={`fas fa-toggle-${
               paciente.status === Status.Ativo ? 'on' : 'off'
             }`}></i>
           Alterar status
         </button>
-        <button onClick={() => history.push('/' + paciente.id)}>
+        <button id='edit' onClick={() => history.push('/' + paciente.id)}>
           <i className='fas fa-edit'></i>
           Editar
         </button>
-        <button onClick={() => removePaciente(paciente.id)}>
+        <button id='delete' onClick={() => removePaciente(paciente.id)}>
           <i className='fas fa-trash'></i>
           Excluir
         </button>

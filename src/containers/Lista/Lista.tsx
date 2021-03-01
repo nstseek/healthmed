@@ -36,7 +36,7 @@ const Lista: React.FC = () => {
           .filter(
             (paciente) =>
               _.deburr(paciente.nome.toLowerCase()).indexOf(
-                _.deburr(formSearch.value.query.toLowerCase())
+                _.deburr(formSearch.state?.query.value.toLowerCase())
               ) > -1
           )
           .map((paciente) => (

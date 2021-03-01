@@ -1,20 +1,27 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Cadastro from './Cadastro';
 import { BrowserRouter } from 'react-router-dom';
+import PacienteContext from 'contexts/pacientes/paciente-context';
+import MockPacientes from 'mocks/models/pacientes';
 
 describe('<Cadastro />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(
-      <BrowserRouter>
-        <Cadastro />
-      </BrowserRouter>
+    component = mount(
+      <PacienteContext.Provider
+        value={{ pacientes: MockPacientes, setPacientes: () => null }}>
+        <BrowserRouter>
+          <Cadastro />
+        </BrowserRouter>
+      </PacienteContext.Provider>
     );
   });
 
-  test('It should mount', () => {
-    expect(component.length).toBe(1);
+  describe('Basic', () => {
+    it('Should mount', () => {
+      expect(component.length).toBe(1);
+    });
   });
 });

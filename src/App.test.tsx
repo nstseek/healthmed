@@ -9,7 +9,9 @@ describe('<App />', () => {
     component = shallow(<App />);
   });
 
-  test('It should mount', () => {
-    expect(component.length).toBe(1);
+  describe('Basic', () => {
+    it('Should mount', () => {
+      expect(component.length).toBe(1);
+    });
   });
 });
