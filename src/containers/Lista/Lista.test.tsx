@@ -24,9 +24,7 @@ const mockFormData = {
 };
 const mockForm = jest.fn().mockReturnValue(null);
 jest.mock('@nstseek/react-forms', () => ({
-  useForm: function () {
-    return mockFormData;
-  },
+  useForm: () => mockFormData,
   Form: (props) => {
     mockForm(props);
     return <form id='form-test'>testing form</form>;
