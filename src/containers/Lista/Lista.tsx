@@ -28,20 +28,23 @@ const formSearchConfig: FormBuilder<{ query: string }> = {
 const Lista: React.FC = () => {
   const { pacientes } = usePaciente();
   const formSearch = useForm(formSearchConfig);
+  const resultados = pacientes.filter(
+    (paciente) =>
+      _.deburr(paciente.nome.toLowerCase()).indexOf(
+        _.deburr(formSearch.value.query.toLowerCase())
+      ) > -1
+  );
   return (
     <div className='Lista'>
       <Form form={formSearch} />
       <div className='lista-content'>
-        {pacientes
-          .filter(
-            (paciente) =>
-              _.deburr(paciente.nome.toLowerCase()).indexOf(
-                _.deburr(formSearch.state?.query.value.toLowerCase())
-              ) > -1
-          )
-          .map((paciente) => (
+        {resultados.length ? (
+          resultados.map((paciente) => (
             <CardPaciente key={paciente.id} paciente={paciente} />
-          ))}
+          ))
+        ) : (
+          <h3 id='no-results-found'>Nenhum resultado encontrado.</h3>
+        )}
       </div>
     </div>
   );
