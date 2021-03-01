@@ -1,3 +1,5 @@
+[![CI/CD](https://github.com/nstseek/healthmed/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/nstseek/healthmed/actions/workflows/firebase-hosting-merge.yml)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
